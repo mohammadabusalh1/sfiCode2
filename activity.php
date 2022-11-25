@@ -56,11 +56,9 @@ if ($_SESSION['login'] == 0) {
             .navbar {
                 height: 70px;
             }
-
-
             #center1 {
                 position: absolute;
-                right: 40%;
+                right: 35%;
                 top: 25%;
                 border-radius: 15px;
                 width: 100px;
@@ -70,14 +68,14 @@ if ($_SESSION['login'] == 0) {
 
             #center2 {
                 position: absolute;
-                right: 50%;
+                right: 45%;
                 top: 25%;
                 width: 90px;
             }
 
             #center3 {
                 position: absolute;
-                right: 60%;
+                right: 55%;
                 top: 25%;
                 border-radius: 15px;
                 width: 100px;
@@ -87,7 +85,7 @@ if ($_SESSION['login'] == 0) {
 
             #center4 {
                 position: absolute;
-                left:  1.5%;
+                left:  2%;
                 top: 25%;
             }
 
@@ -125,6 +123,7 @@ if ($_SESSION['login'] == 0) {
             height: 170px;
             background-color: rgba(6, 40, 61, 1);
             text-align: center;
+            
         }
 
         @media screen and (max-width:770px) {

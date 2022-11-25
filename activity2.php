@@ -63,7 +63,7 @@ $id = $_SESSION['id'];
 
             #center1 {
                 position: absolute;
-                right: 40%;
+                right: 35%;
                 top: 25%;
                 border-radius: 15px;
                 width: 100px;
@@ -73,14 +73,14 @@ $id = $_SESSION['id'];
 
             #center2 {
                 position: absolute;
-                right: 50%;
+                right: 45%;
                 top: 25%;
                 width: 90px;
             }
 
             #center3 {
                 position: absolute;
-                right: 60%;
+                right: 55%;
                 top: 25%;
                 border-radius: 15px;
                 width: 100px;
@@ -90,7 +90,7 @@ $id = $_SESSION['id'];
 
             #center4 {
                 position: absolute;
-                left:  1.5%;
+                left:  2%;
                 top: 25%;
             }
 

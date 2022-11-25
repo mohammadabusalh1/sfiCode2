@@ -121,37 +121,37 @@ if ($_SESSION['login'] == 0) {
       }
 
       #center1 {
-        position: absolute;
-        right: 40%;
-        top: 25%;
-        width: 100px;
-      }
+                position: absolute;
+                right: 35%;
+                top: 25%;
+                border-radius: 15px;
+                width: 100px;
+                text-decoration: none;
+                transition: 0.5s;
+            }
 
-      #center2 {
-        position: absolute;
-        right: 50%;
-        top: 25%;
-        border-radius: 15px;
-        width: 100px;
-        text-decoration: none;
-        transition: 0.5s;
-      }
+            #center2 {
+                position: absolute;
+                right: 45%;
+                top: 25%;
+                width: 90px;
+            }
 
-      #center3 {
-        position: absolute;
-        right: 60%;
-        top: 25%;
-        border-radius: 15px;
-        width: 100px;
-        text-decoration: none;
-        transition: 0.5s;
-      }
+            #center3 {
+                position: absolute;
+                right: 55%;
+                top: 25%;
+                border-radius: 15px;
+                width: 100px;
+                text-decoration: none;
+                transition: 0.5s;
+            }
 
-      #center4 {
-        position: absolute;
-        left: 1.5%;
-        top: 25%;
-      }
+            #center4 {
+                position: absolute;
+                left:  2%;
+                top: 25%;
+            }
     }
 
     #center2:hover {
