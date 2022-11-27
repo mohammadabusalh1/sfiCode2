@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
 include 'conn/connc.php';
+$selected = array();
 session_start();
 $_SESSION['id'] = 0;
-$_SESSION['show'] = 0;
 if ($_SESSION['login'] == 0) {
     echo '<script> window.location.replace("login.php")</script>';
 }
@@ -50,7 +50,7 @@ if ($_SESSION['login'] == 0) {
                 margin-left: 8vw;
             }
 
-            .row div{
+            .row div {
                 margin-bottom: 1vw;
             }
 
@@ -126,6 +126,13 @@ if ($_SESSION['login'] == 0) {
             text-align: center;
 
         }
+
+        .con p {
+            font-size: 16px;
+            line-height: 100%;
+            margin-top: 1vw;
+            color: #3D5656;
+        }
     </style>
 
 </head>
@@ -193,98 +200,89 @@ if ($_SESSION['login'] == 0) {
         </div>
     </div>
 
-<br><br>
-    <div class="container text-center" style=" background-color: white; 
+    <br><br>
+    <div class="container text-center con" style=" background-color: white; 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 30px; border-style: solid; 
     border-width: 1px; border-style: solid; border-color: rgba(0, 0, 0, 0.50);">
-    <br><br>
+        <br><br>
         <div class="row mb-4">
             <div class="col-2"></div>
             <div class="col-lg-2">
-            <div style=" background-color: white; border-radius: 10px;
-             border-style: solid; border-width: 1px; border-style: solid; border-color: rgba(71, 181, 255, 0.60);
-             ">
-             <p style="font-size: 16px; line-height: 100%;margin-top: 1vw;
-             color: rgba(37, 109, 133, 1);">إسم النشاط</p>
-            </div>
-            </div>
-            <div class="col-1"></div>
-            <div class="col-lg-2">
-            <div style=" background-color: white; border-radius: 10px;
-             border-style: solid; border-width: 1px; border-style: solid; border-color: rgba(71, 181, 255, 0.60);
-             ">
-             <p style="font-size: 16px; line-height: 100%;margin-top: 1vw;
-             color: rgba(37, 109, 133, 1);">الهدف</p>
-            </div>
+                <button style=" background-color: white; border-radius: 10px;
+             border-style: solid; border-width: 1px; border-style: solid; 
+             border-color: rgba(71, 181, 255, 0.60);width: 100%;" id="1" name="1" type="submit">
+                    <p>إسم النشاط</p>
+                </button>
             </div>
             <div class="col-1"></div>
             <div class="col-lg-2">
-            <div style=" background-color: white; border-radius: 10px;
-             border-style: solid; border-width: 1px; border-style: solid; border-color: rgba(71, 181, 255, 0.60);
-             ">
-             <p style="font-size: 16px; line-height: 100%;margin-top: 1vw;
-             color: rgba(37, 109, 133, 1);">اسم المشروع</p>
+                <button style=" background-color: white; border-radius: 10px;
+             border-style: solid; border-width: 1px; border-style: solid; 
+             border-color: rgba(71, 181, 255, 0.60);width: 100%;" id="2" name="2" type="submit">
+                    <p>الهدف</p>
+                </button>
             </div>
+            <div class="col-1"></div>
+            <div class="col-lg-2">
+                <button style=" background-color: white; border-radius: 10px;
+             border-style: solid; border-width: 1px; border-style: solid; 
+             border-color: rgba(71, 181, 255, 0.60);width: 100%;" id="3" name="3" type="submit">
+                    <p>إسم المشروع</p>
+                </button>
             </div>
         </div>
 
         <div class="row mb-4">
             <div class="col-2"></div>
             <div class="col-lg-2">
-            <div style=" background-color: white; border-radius: 10px;
-             border-style: solid; border-width: 1px; border-style: solid; border-color: rgba(71, 181, 255, 0.60);
-             ">
-             <p style="font-size: 16px; line-height: 100%;margin-top: 1vw;
-             color: rgba(37, 109, 133, 1);">المحافظة</p>
-            </div>
-            </div>
-            <div class="col-1"></div>
-            <div class="col-lg-2">
-            <div style=" background-color: white; border-radius: 10px;
-             border-style: solid; border-width: 1px; border-style: solid; border-color: rgba(71, 181, 255, 0.60);
-             ">
-             <p style="font-size: 16px; line-height: 100%;margin-top: 1vw;
-             color: rgba(37, 109, 133, 1);">المنطقة</p>
-            </div>
+                <button style=" background-color: white; border-radius: 10px;
+             border-style: solid; border-width: 1px; border-style: solid; 
+             border-color: rgba(71, 181, 255, 0.60);width: 100%;" id="4" name="4" type="submit">
+                    <p>المحافظة</p>
+                </button>
             </div>
             <div class="col-1"></div>
             <div class="col-lg-2">
-            <div style=" background-color: white; border-radius: 10px;
-             border-style: solid; border-width: 1px; border-style: solid; border-color: rgba(71, 181, 255, 0.60);
-             ">
-             <p style="font-size: 16px; line-height: 100%;margin-top: 1vw;
-             color: rgba(37, 109, 133, 1);">البرنامج</p>
+                <button style=" background-color: white; border-radius: 10px;
+             border-style: solid; border-width: 1px; border-style: solid; 
+             border-color: rgba(71, 181, 255, 0.60);width: 100%;" id="5" name="5" type="submit">
+                    <p>المنطقة</p>
+                </button>
             </div>
+            <div class="col-1"></div>
+            <div class="col-lg-2">
+                <button style=" background-color: white; border-radius: 10px;
+             border-style: solid; border-width: 1px; border-style: solid; 
+             border-color: rgba(71, 181, 255, 0.60);width: 100%;" id="6" name="6" type="submit">
+                    <p>البرنامج</p>
+                </button>
             </div>
         </div>
 
         <div class="row mb-4">
             <div class="col-2"></div>
             <div class="col-lg-2">
-            <div style=" background-color: white; border-radius: 10px;
-             border-style: solid; border-width: 1px; border-style: solid; border-color: rgba(71, 181, 255, 0.60);
-             ">
-             <p style="font-size: 16px; line-height: 100%;margin-top: 1vw;
-             color: rgba(37, 109, 133, 1);">الروابط</p>
-            </div>
-            </div>
-            <div class="col-1"></div>
-            <div class="col-lg-2">
-            <div style=" background-color: white; border-radius: 10px;
-             border-style: solid; border-width: 1px; border-style: solid; border-color: rgba(71, 181, 255, 0.60);
-             ">
-             <p style="font-size: 16px; line-height: 100%;margin-top: 1vw;
-             color: rgba(37, 109, 133, 1);">أسماء الموظفين</p>
-            </div>
+                <button style=" background-color: white; border-radius: 10px;
+             border-style: solid; border-width: 1px; border-style: solid; 
+             border-color: rgba(71, 181, 255, 0.60);width: 100%;" id="7" name="7" type="submit">
+                    <p>الروابط</p>
+                </button>
             </div>
             <div class="col-1"></div>
             <div class="col-lg-2">
-            <div style=" background-color: white; border-radius: 10px;
-             border-style: solid; border-width: 1px; border-style: solid; border-color: rgba(71, 181, 255, 0.60);
-             ">
-             <p style="font-size: 16px; line-height: 100%;margin-top: 1vw;
-             color: rgba(37, 109, 133, 1);">التاريخ</p>
+                <button style=" background-color: white; border-radius: 10px;
+             border-style: solid; border-width: 1px; border-style: solid; 
+             border-color: rgba(71, 181, 255, 0.60);width: 100%;" id="8" name="8" type="submit">
+                    <p>أسماء الموظفين</p>
+                </button>
             </div>
+            <div class="col-1"></div>
+            <div class="col-lg-2">
+                <button style=" background-color: white; border-radius: 10px;
+             border-style: solid; border-width: 1px; border-style: solid; 
+             border-color: rgba(71, 181, 255, 0.60);width: 100%;" id="9" name="9" type="submit">
+                    <p>التاريخ</p>
+                </button>
             </div>
         </div>
 
@@ -292,64 +290,104 @@ if ($_SESSION['login'] == 0) {
         <div class="row mb-4">
             <div class="col-2"></div>
             <div class="col-lg-2">
-            <div style=" background-color: white; border-radius: 10px;
-             border-style: solid; border-width: 1px; border-style: solid; border-color: rgba(71, 181, 255, 0.60);
-             ">
-             <p style="font-size: 16px; line-height: 100%;margin-top: 1vw;
-             color: rgba(37, 109, 133, 1);">نوع النشاط</p>
-            </div>
-            </div>
-            <div class="col-1"></div>
-            <div class="col-lg-2">
-            <div style=" background-color: white; border-radius: 10px;
-             border-style: solid; border-width: 1px; border-style: solid; border-color: rgba(71, 181, 255, 0.60);
-             ">
-             <p style="font-size: 16px; line-height: 100%;margin-top: 1vw;
-             color: rgba(37, 109, 133, 1);">تفاصيل النشاط</p>
-            </div>
+                <button style=" background-color: white; border-radius: 10px;
+             border-style: solid; border-width: 1px; border-style: solid; 
+             border-color: rgba(71, 181, 255, 0.60);width: 100%;" id="10" name="10" type="submit">
+                    <p>نوع النشاط</p>
+                </button>
             </div>
             <div class="col-1"></div>
             <div class="col-lg-2">
-            <div style=" background-color: white; border-radius: 10px;
-             border-style: solid; border-width: 1px; border-style: solid; border-color: rgba(71, 181, 255, 0.60);
-             ">
-             <p style="font-size: 16px; line-height: 100%;margin-top: 1vw;
-             color: rgba(37, 109, 133, 1);">التحديات و التوصيات</p>
+                <button style=" background-color: white; border-radius: 10px;
+             border-style: solid; border-width: 1px; border-style: solid; 
+             border-color: rgba(71, 181, 255, 0.60);width: 100%;" id="11" name="11" type="submit">
+                    <p>تفاصيل النشاط</p>
+                </button>
             </div>
+            <div class="col-1"></div>
+            <div class="col-lg-2">
+                <button style=" background-color: white; border-radius: 10px;
+             border-style: solid; border-width: 1px; border-style: solid; 
+             border-color: rgba(71, 181, 255, 0.60);width: 100%;" id="12" name="12" type="submit">
+                    <p>التحديات و التوصيات</p>
+                </button>
             </div>
         </div>
 
         <div class="row mb-4">
             <div class="col-2"></div>
             <div class="col-lg-2">
-            <div style=" background-color: white; border-radius: 10px;
-             border-style: solid; border-width: 1px; border-style: solid; border-color: rgba(71, 181, 255, 0.60);
-             ">
-             <p style="font-size: 16px; line-height: 100%;margin-top: 1vw;
-             color: rgba(37, 109, 133, 1);">المشاركين</p>
-            </div>
-            </div>
-            <div class="col-1"></div>
-            <div class="col-lg-2">
-            <div style=" background-color: white; border-radius: 10px;
-             border-style: solid; border-width: 1px; border-style: solid; border-color: rgba(71, 181, 255, 0.60);
-             ">
-             <p style="font-size: 16px; line-height: 100%;margin-top: 1vw;
-             color: rgba(37, 109, 133, 1);">المستفيدين</p>
-            </div>
+                <button style=" background-color: white; border-radius: 10px;
+             border-style: solid; border-width: 1px; border-style: solid; 
+             border-color: rgba(71, 181, 255, 0.60);width: 100%;" id="13" name="13" type="submit">
+                    <p>المشاركين</p>
+                </button>
             </div>
             <div class="col-1"></div>
             <div class="col-lg-2">
-            <div style=" background-color: white; border-radius: 10px;
-             border-style: solid; border-width: 1px; border-style: solid; border-color: rgba(71, 181, 255, 0.60);
-             ">
-             <p style="font-size: 16px; line-height: 100%;margin-top: 1vw;
-             color: rgba(37, 109, 133, 1);">مرفقات</p>
+                <button style=" background-color: white; border-radius: 10px;
+             border-style: solid; border-width: 1px; border-style: solid; 
+             border-color: rgba(71, 181, 255, 0.60);width: 100%;" id="14" name="14" type="submit">
+                    <p>المستفيدين</p>
+                </button>
             </div>
+            <div class="col-1"></div>
+            <div class="col-lg-2">
+                <button style=" background-color: white; border-radius: 10px;
+             border-style: solid; border-width: 1px; border-style: solid; 
+             border-color: rgba(71, 181, 255, 0.60);width: 100%;" id="15" name="15" type="submit">
+                    <p>المرفقات</p>
+                </button>
+            </div>
+        </div>
+        <br>
+        <div class="row mb-4">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <button id="next" style="width: 80%;" class="btn btn-success"><b>التالي</b></button>
             </div>
         </div>
     </div>
 
+
+    <script>
+        let next = document.getElementById("next");
+        next.addEventListener("click", stateHandle1);
+
+        function stateHandle1() {
+            localStorage.setItem("isSelect", isSelect);
+            //alert(localStorage.getItem("storageName"))
+            window.location.replace("rep2.php");
+        }
+
+
+
+        let isSelect = new Array(15);
+        for (let i = 0; i < 15; i++) {
+            isSelect[i] = 0;
+        }
+
+        let es = new Array(16);
+
+        for (let i = 1; i <= 15; i++) {
+            es[i] = document.getElementById(i + "");
+        }
+
+        for (let i = 1; i <= 15; i++) {
+            es[i].addEventListener("click", stateHandle);
+
+            function stateHandle() {
+                if (isSelect[i - 1] == 0) {
+                    es[i].style.backgroundColor = "#FED049";
+                    isSelect[i - 1] = 1;
+                } else {
+                    es[i].style.backgroundColor = "#ffffff";
+                    isSelect[i - 1] = 0;
+                }
+            }
+
+        }
+    </script>
 
     <br><br>
     <!-- footer -->
