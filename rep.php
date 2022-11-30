@@ -8,7 +8,6 @@ if ($_SESSION['login'] == 0) {
     echo '<script> window.location.replace("login.php")</script>';
 }
 ?>
-
 <head>
     <!-- head-->
     <meta charset="UTF-8">
@@ -134,7 +133,6 @@ if ($_SESSION['login'] == 0) {
             color: #3D5656;
         }
     </style>
-
 </head>
 
 <body dir="rtl" style="background-color: #DFF6FF;">
@@ -201,7 +199,7 @@ if ($_SESSION['login'] == 0) {
     </div>
 
     <br><br>
-    <div class="container text-center con" style=" background-color: white; 
+    <div id="container1" class="container text-center con" style=" background-color: white; 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 30px; border-style: solid; 
     border-width: 1px; border-style: solid; border-color: rgba(0, 0, 0, 0.50);">
         <br><br>
@@ -349,7 +347,6 @@ if ($_SESSION['login'] == 0) {
         </div>
     </div>
 
-
     <script>
         let next = document.getElementById("next");
         next.addEventListener("click", stateHandle1);
@@ -412,7 +409,6 @@ if ($_SESSION['login'] == 0) {
         </div>
         </div>
     </footer>
-
 
 </body>
 

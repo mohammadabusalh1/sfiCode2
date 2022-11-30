@@ -240,7 +240,6 @@ if ($_SESSION['login'] == 0) {
             <div class="row mb-3">
                 <div class="col-md-4">
                     <input class="form-control" list="project" name="ProjectName" id="ProjectName" placeholder="إسم المشروع">
-
                     <datalist id="project">
                         <?php
                         $sql = "SELECT * FROM `project`";
@@ -249,6 +248,7 @@ if ($_SESSION['login'] == 0) {
                             echo '<option value=' . $n['ProjectName'] . '>';
                         }
                         ?>
+                    </datalist>
                 </div>
                 <div class="col-1"></div>
                 <div class="col-md-4">
