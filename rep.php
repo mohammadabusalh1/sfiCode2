@@ -8,6 +8,7 @@ if ($_SESSION['login'] == 0) {
     echo '<script> window.location.replace("login.php")</script>';
 }
 ?>
+
 <head>
     <!-- head-->
     <meta charset="UTF-8">
@@ -18,11 +19,12 @@ if ($_SESSION['login'] == 0) {
     <!-- links -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- jQuery library -->
-    <script src="js/jquery.min.js">
-    </script>
     <!-- Latest compiled JavaScript -->
-    <script src="js/bootstrap.min.js">
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <!-- css -->
     <style type="text/css">
@@ -191,7 +193,7 @@ if ($_SESSION['login'] == 0) {
                 <div style="background-color: white; box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25); 
     border-radius: 10px; border-style: solid; border-width: 1px; border-style: solid; 
     border-color: rgba(0, 0, 0, 0.80);">
-                    <p style="font-size: 24px; line-height: 100%; margin-top: 0.2vw; color: rgba(37, 109, 133, 1);">إختر محتويات التقرير</p>
+                    <p class="content" style="font-size: 24px; line-height: 100%; margin-top: 0.2vw; color: rgba(37, 109, 133, 1);">إختر محتويات التقرير</p>
 
                 </div>
             </div>
@@ -342,22 +344,23 @@ if ($_SESSION['login'] == 0) {
         <div class="row mb-4">
             <div class="col-4"></div>
             <div class="col-4">
-                <button id="next" style="width: 80%;" class="btn btn-success"><b>التالي</b></button>
+                <a id="next" style="width: 80%;text-decoration: none;" class="btn btn-success"><b>التالي</b></a>
             </div>
         </div>
     </div>
 
     <script>
-        let next = document.getElementById("next");
-        next.addEventListener("click", stateHandle1);
+        $("#next").click(function() {
+            $(".content").html("الفلاتر");
 
-        function stateHandle1() {
-            localStorage.setItem("isSelect", isSelect);
-            //alert(localStorage.getItem("storageName"))
-            window.location.replace("rep2.php");
-        }
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                document.getElementById("container1").innerHTML = this.responseText;
+            }
+            xhttp.open("POST", "values.php");
+            xhttp.send();
 
-
+        });
 
         let isSelect = new Array(15);
         for (let i = 0; i < 15; i++) {
