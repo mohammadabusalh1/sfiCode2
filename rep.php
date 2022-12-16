@@ -351,14 +351,7 @@ if ($_SESSION['login'] == 0) {
 
     <script>
         $("#next").click(function() {
-            $(".content").html("الفلاتر");
-
-            const xhttp = new XMLHttpRequest();
-            xhttp.onload = function() {
-                document.getElementById("container1").innerHTML = this.responseText;
-            }
-            xhttp.open("POST", "values.php");
-            xhttp.send();
+           window.location.replace("values.php");
 
         });
 

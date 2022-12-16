@@ -102,7 +102,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == 1) {
 
 <body>
 
-<form method="post">
+  <form method="post">
     <div class="container-flud">
       <br><br>
       <div class="row">
@@ -116,13 +116,11 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == 1) {
             <br>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">اسم المستخدم</label>
-              <input type="text" class="form-control" name="username" id="username" 
-              placeholder="إسم المستخدم الخاص بك">
+              <input type="text" class="form-control" name="username" id="username" placeholder="إسم المستخدم الخاص بك">
             </div>
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label"> كلمة المرور</label>
-              <input type="password" class="form-control" name="password" id="inputPassword" 
-              style="background-color: #EEEEEE;" placeholder="كلمة المرور الخاصة بك">
+              <input type="password" class="form-control" name="password" id="inputPassword" style="background-color: #EEEEEE;" placeholder="كلمة المرور الخاصة بك">
             </div>
 
             <br>
@@ -174,45 +172,49 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == 1) {
   <?php
   $click = isset($_POST['login']);
   if ($click) {
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-  $perm = $_POST['type'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $perm = $_POST['type'];
 
-  if ($perm == "user") {
-    $sql = " SELECT * FROM `users` WHERE username = '$username' AND password = '$password' AND permission = 'user' ";
-    $res = mysqli_query($con, $sql);
+    if ($perm == "user") {
+      $sql = " SELECT * FROM `users` WHERE username = '$username' AND password = '$password' AND permission = 'user' ";
+      $res = mysqli_query($con, $sql);
 
-    while ($n = mysqli_fetch_assoc($res)) {
-      $_SESSION['login'] = 1;
-      echo '<script> window.location.replace("IMMain.php")</script>';
-    }
-
-    echo '<div class=" row" style="text-align: left ;">
-  <div class="col-md-8 col-sm-12">
-  <div class="alert alert-danger d-flex align-items-center" role="alert" style="height:1vw ;">
-    المستخدم غير موجود
-  </div>
-  </div>';
-  } else if ($perm == "admin") {
-    $sql = " SELECT * FROM `users` WHERE username = '$username' AND password = '$password' AND permission = 'admin' ";
-    $res = mysqli_query($con, $sql);
-
-    if ($res) {
       while ($n = mysqli_fetch_assoc($res)) {
         $_SESSION['login'] = 1;
-        echo '<script> window.location.replace("controlPanal.php")</script>';
+        echo '<script> window.location.replace("IMMain.php")</script>';
       }
 
+      echo '<div class="row" style="text-align: right ;" dir="rtl">
+    <div class="col-6"></div>
+        <div class="col-md-4 col-sm-12">
+        <div class="alert alert-danger d-flex" role="alert">
+          المستخدم غير موجود
+        </div>
+        </div>
+        <br>';
+    } else if ($perm == "admin") {
+      $sql = " SELECT * FROM `users` WHERE username = '$username' AND password = '$password' AND permission = 'admin' ";
+      $res = mysqli_query($con, $sql);
 
-      echo '<div class=" row" style="text-align: left ;">
-    <div class="col-md-8 col-sm-12">
-    <div class="alert alert-danger d-flex align-items-center" role="alert" style="height:1vw ;">
-      المستخدم غير موجود
-    </div>
-    </div>';
+      if ($res) {
+        while ($n = mysqli_fetch_assoc($res)) {
+          $_SESSION['login'] = 1;
+          echo '<script> window.location.replace("controlPanal.php")</script>';
+        }
+
+
+        echo '<div class="row" style="text-align: right ;" dir="rtl">
+      <div class="col-6"></div>
+          <div class="col-md-4 col-sm-12">
+          <div class="alert alert-danger d-flex" role="alert">
+            المستخدم غير موجود
+          </div>
+          </div>
+          <br>';
+      }
     }
   }
-}
 
   ?>
 
